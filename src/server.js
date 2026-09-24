@@ -11,7 +11,13 @@ const app = express();
 
 const PORT = process.env.PORT || 9000;
 
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://linker-three-pink.vercel.app/"
+    ],
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Accept"]
+}));
 
 app.use(express.json());
 
